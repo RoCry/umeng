@@ -28,6 +28,10 @@ type UMengMessage struct {
 	Description    string                   `json:"description,omitempty"`
 	ThirdPartyId   string                   `json:"thirdparty_id,omitempty"`
 	Payload        map[string]interface{}   `json:"payload"`
+
+	// default push
+	MiPush     string   `json:"mipush,omitempty"`
+	MiActivity string `json:"mi_activity,omitempty"`
 }
 
 func NewUMengMessage(appKey, appSecret, mType string, production bool) *UMengMessage {
