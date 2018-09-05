@@ -34,6 +34,12 @@ type UMengMessage struct {
 	MiActivity string `json:"mi_activity,omitempty"`
 }
 
+//设定 当设备离线时转为系统下发
+func (message *UMengMessage)SetMipush(defaultPush ,activity string) {
+	message.MiPush = defaultPush
+	message.MiActivity = activity
+}
+
 func NewUMengMessage(appKey, appSecret, mType string, production bool) *UMengMessage {
 	var message = &UMengMessage{}
 	message.AppKey    = appKey
