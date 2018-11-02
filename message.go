@@ -206,7 +206,7 @@ func (this UMengAndroidPayload) SetAfterOpen(key string, value string) {
 	}
 }
 
-func (this UMengAndroidPayload) SetExtra(key, value string) {
+func (this UMengAndroidPayload) SetExtra(key string, value interface{}) {
 	if extra, ok := this["extra"].(map[string]interface{}); !ok {
 		extra = make(map[string]interface{})
 		extra[key] = value
